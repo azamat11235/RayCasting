@@ -40,13 +40,6 @@ public:
 	}
 };
 
-class Figure
-{
-public:
-	virtual void draw() = 0;
-	virtual void move() = 0;
-};
-
 class Scene
 {
 	Map map;
@@ -54,7 +47,7 @@ class Scene
 	char *screen;
 	int ScreenWidth, ScreenHeight;
 	float playerX, playerY, playerA;
-	float FOV = 3.14159 / 3.0; // угол обзора
+	float FOV = 3.14159 / 3.0; // field of view
 	float Depth = 16.0;
 	float Speed = 0.4;
 public:
@@ -177,7 +170,7 @@ public:
 			}
 			std::cout << std::endl;
 		}
-		std::cout << "> Enter some command (W, S, A, D, Q - quit): ";
+		std::cout << "> Enter some command (w, s, a, d, q - quit): ";
 		flush(std::cout);
 	}
 	void updPos(char cmd)
